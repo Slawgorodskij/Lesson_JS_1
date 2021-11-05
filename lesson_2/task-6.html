@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задача № 6</title>
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+
+      let amountMoney;
+      let checkAmountMoney;
+
+      /**
+       * Функция запрашивает число и подготавливает его к проверке.
+       * @returns {number}
+       */
+      function enteringNumber() {
+        amountMoney = prompt(           'Здравствуйте. Введите, цифрами, сумму которую вы хотите положить на счет в банке.'
+        );
+        checkAmountMoney = +amountMoney;
+        return;
+      }
+
+      /**
+       * Функция получает введенное пользователем число для проверки предпоследного знака.
+       * При наличии в веденном числе, в разряде десятков цифры 1,
+       * выводится ответ и прекращается выполнение задачи.
+       * При неудовлетворении указанного условия переходит ко второй проверке.
+       */
+      function checkAnswerFirstTest() {
+        let amountMoneyStr = String(amountMoney);
+        let amountMoneyDozen = amountMoneyStr.substr(-2, 1);
+        if (+amountMoneyDozen == 1) {
+          alert(`Ваша сумма в ${amountMoney} рублей успешно зачислена.`);
+        } else {
+          checkAnswerSecondTest();
+        }
+      }
+
+      /**
+       * Функция получает введенное пользователем число для проверки последного знака.
+       * Выводит ответ и прекращается выполнение задачи.
+       */
+
+      function checkAnswerSecondTest() {
+        let amountMoneyStr = String(amountMoney);
+        let amountMoneyUnits = amountMoneyStr.substr(-1);
+        switch (+amountMoneyUnits) {
+          case 1:
+            alert(`Ваша сумма в ${amountMoney} рубль успешно зачислена.`);
+            break;
+          case 2:
+          case 3:
+          case 4:
+            alert(`Ваша сумма в ${amountMoney} рубля успешно зачислена.`);
+            break;
+          case 5:
+          case 6:
+          case 7:
+          case 8:
+          case 9:
+          case 0:
+            alert(`Ваша сумма в ${amountMoney} рублей успешно зачислена.`);
+            break;
+        }
+      }
+
+      enteringNumber();
+
+      if (typeof checkAmountMoney == 'number') {
+        checkAnswerFirstTest(amountMoney);
+      } else {
+        enteringNumber();
+      }
+    </script>
+  </body>
+</html>

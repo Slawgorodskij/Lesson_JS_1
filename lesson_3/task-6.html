@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задача № 6</title>
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+
+      // 1 вариант.
+      const arrX = 'X';
+      for (let i = 1; i <= 20; ++i) {
+        console.log(arrX.repeat(i));
+      }
+
+      // 2 вариант.
+      const arrX_3 = [];
+      for (let i = 0; i < 20; ++i) {
+        arrX_3.push('x');
+        console.log(arrX_3.join(''));
+      }
+
+      // 3 вариант менее удачный, но имеет право на существование.
+      const arrX_2 = [];
+      for (let i = 0; i < 20; ++i) {
+        arrX_2.push('X');
+        console.log(...arrX_2);
+      }
+    </script>
+  </body>
+</html>

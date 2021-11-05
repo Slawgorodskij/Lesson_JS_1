@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задача № 5</title>
+  </head>
+
+  <body>
+    <script>
+      'use strict';
+
+      /**
+       * Функция выполняет сложение чисел.
+       * @returns {number}
+       */
+      function sum(arg1, arg2) {
+        return arg1 + arg2;
+      }
+
+      /**
+       * Функция выполняет вычитание чисел.
+       * @returns {number}
+       */
+      function subtract(arg1, arg2) {
+        return arg1 - arg2;
+      }
+
+      /**
+       * Функция выполняет произведение чисел.
+       * @returns {number}
+       */
+      function multi(arg1, arg2) {
+        return arg1 * arg2;
+      }
+
+      /**
+       * Функция выполняет деление чисел.
+       * @returns {number}
+       */
+      function division(arg1, arg2) {
+        return arg1 / arg2;
+      }
+
+      /**
+       * Функция принимает в качестве параметров два числа и название операции.
+       * Вызывает функцию для проведения математической операции.
+       * После получения результата, выводит ответ и прекращает программу.
+       */
+      function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+          case 'sum':
+            console.log(sum(arg1, arg2));
+            break;
+          case 'subtract':
+            console.log(subtract(arg1, arg2));
+            break;
+          case 'multi':
+            console.log(multi(arg1, arg2));
+            break;
+          case 'division':
+            console.log(division(arg1, arg2));
+            break;
+        }
+      }
+
+      mathOperation(3, 5, 'sum');
+      mathOperation(7, 4, 'subtract');
+      mathOperation(2, 8, 'multi');
+      mathOperation(6, 2, 'division');
+    </script>
+  </body>
+</html>
